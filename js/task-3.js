@@ -1,26 +1,43 @@
-const profile = {
-    username: "Jacob",
-    playTime: 300,
-  
-    changeUsername: function(newName) {
-      this.username = newName;
+const sortByDescendingFriendCount = (users) => {
+  return users.sort((a, b) => b.friends.length - a.friends.length);
+};
+
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
     },
-  
-    updatePlayTime: function(hours) {
-      this.playTime += hours;
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
     },
-  
-    getInfo: function() {
-      return `${this.username} has ${this.playTime} active hours!`;
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
     }
-  };
-  
-  
-  console.log(profile.getInfo()); 
-  
-  profile.changeUsername("Marco");
-  console.log(profile.getInfo()); 
-  
-  profile.updatePlayTime(20);
-  console.log(profile.getInfo()); 
-  
+  ])
+);
